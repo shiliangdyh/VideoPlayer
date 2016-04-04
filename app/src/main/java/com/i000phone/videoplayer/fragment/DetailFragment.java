@@ -2,6 +2,7 @@ package com.i000phone.videoplayer.fragment;
 
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -40,6 +41,8 @@ public class DetailFragment extends Fragment implements NetworkTask.Callback<Mov
     private View view;
     private Movie movie;
     private String l;
+    private Resources res;
+
     public DetailFragment() {
     }
 
@@ -76,6 +79,7 @@ public class DetailFragment extends Fragment implements NetworkTask.Callback<Mov
 
     @Override
     public void doResponse(Movie movie) {
+        res = getContext().getResources();
         this.movie = movie;
         MyImageView detail_img = (MyImageView) view.findViewById(R.id.detail_img);
         String poster_path = movie.getPoster_path();
@@ -100,13 +104,13 @@ public class DetailFragment extends Fragment implements NetworkTask.Callback<Mov
         detail_category.setText(sb.toString());
         double vote_average = movie.getVote_average();
         TextView detail_vote_avg = (TextView) view.findViewById(R.id.detail_vote_avg);
-        detail_vote_avg.setText("评分：" + vote_average);
+        detail_vote_avg.setText(res.getString(R.string.rating) + vote_average);
         int vote_count = movie.getVote_count();
         TextView detail_vote_count = (TextView) view.findViewById(R.id.detail_vote_count);
-        detail_vote_count.setText(vote_count + "人评");
+        detail_vote_count.setText(vote_count + res.getString(R.string.evaluated));
 
         List<Country> production_countries = movie.getProduction_countries();
-        StringBuilder builder = new StringBuilder("产点：");
+        StringBuilder builder = new StringBuilder(res.getString(R.string.production_countries));
         for (Country country : production_countries) {
             builder.append(country.getName()).append(" ");
         }
@@ -115,7 +119,7 @@ public class DetailFragment extends Fragment implements NetworkTask.Callback<Mov
 
         String original_language = movie.getOriginal_language();
         TextView detail_language = (TextView) view.findViewById(R.id.detail_language);
-        detail_language.setText("语言："+original_language);
+        detail_language.setText(res.getString(R.string.language)+original_language);
 
 //        List<Company> production_companies = movie.getProduction_companies();
 //        StringBuilder sb1 = new StringBuilder("出品：");
@@ -150,7 +154,7 @@ public class DetailFragment extends Fragment implements NetworkTask.Callback<Mov
 
     @Override
     public void doFailure(Exception e) {
-        Toast.makeText(getContext(), "网络错误", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), res.getString(R.string.network), Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -158,11 +162,11 @@ public class DetailFragment extends Fragment implements NetworkTask.Callback<Mov
         if (isChecked) {
             buttonView.setTextColor(Color.RED);
             CollectionUtil.saveMovie(movie, getContext());
-            Toast.makeText(getContext(), "收藏成功", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), res.getString(R.string.collection), Toast.LENGTH_SHORT).show();
         }else{
             buttonView.setTextColor(Color.BLACK);
             CollectionUtil.deleteMovie(movie, getContext());
-            Toast.makeText(getContext(), "取消收藏", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), res.getString(R.string.cancle_collection), Toast.LENGTH_SHORT).show();
         }
     }
 }

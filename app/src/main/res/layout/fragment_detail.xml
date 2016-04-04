@@ -114,7 +114,7 @@
             android:id="@+id/collection"
             android:layout_width="wrap_content"
             android:padding="10dp"
-            android:text="收藏"
+            android:text="@string/collect"
             android:button="@null"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/detail_img"

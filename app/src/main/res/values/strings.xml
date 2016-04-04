@@ -3,4 +3,12 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="rating">Rating：</string>
+    <string name="evaluated">of person Evaluated</string>
+    <string name="production_countries">product by： </string>
+    <string name="language">language：</string>
+    <string name="network">network error</string>
+    <string name="collection">collect success</string>
+    <string name="cancle_collection">cancle collection</string>
+    <string name="collect">collection</string>
 </resources>
