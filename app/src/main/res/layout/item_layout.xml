@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.i000phone.videoplayer.utils.MyImageView
+        android:id="@+id/item_img"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <TextView
+        android:background="#77000000"
+        android:id="@+id/item_title"
+        android:singleLine="true"
+        android:padding="10dp"
+        android:layout_gravity="bottom"
+        android:textSize="16sp"
+        android:textColor="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+<!--
+    <TextView
+        android:id="@+id/item_title"
+        android:textSize="25sp"
+        android:layout_gravity="bottom"
+        android:textColor="#fff"
+        android:background="#88000000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />-->
+</FrameLayout>

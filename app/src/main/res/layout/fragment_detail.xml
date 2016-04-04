@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.i000phone.videoplayer.DetailActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/detail_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#009688"
+            android:gravity="center_horizontal"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textSize="25sp" />
+
+
+            <com.i000phone.videoplayer.utils.MyImageView
+                android:id="@+id/detail_img"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/detail_title"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_below="@+id/detail_title"
+                android:layout_above="@+id/play"
+                android:layout_toRightOf="@+id/detail_img"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/detail_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/detail_belong"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/detail_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/detail_vote_avg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/detail_vote_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/detail_country"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/detail_language"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/detail_company"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+        <Button
+            android:id="@+id/play"
+            android:visibility="gone"
+            android:layout_gravity="bottom"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:background="@drawable/btn_press_selector"
+            android:layout_toRightOf="@+id/detail_img"
+            android:layout_alignBottom="@+id/detail_img"
+            android:layout_height="wrap_content"
+            android:text="PLAY" />
+
+        <RatingBar
+            android:id="@+id/bar"
+            android:stepSize="1"
+            android:visibility="gone"
+            android:numStars="5"
+            android:layout_below="@+id/detail_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <CheckBox
+            android:id="@+id/collection"
+            android:layout_width="wrap_content"
+            android:padding="10dp"
+            android:text="收藏"
+            android:button="@null"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/detail_img"
+            android:visibility="gone"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/detail_override"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/bar"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+</ScrollView>
